@@ -77,7 +77,7 @@ public class SceneManager {
 		scenes.add(new GameClearScene(this));
 		scenes.add(new GameOverScene(this));
 		scenes.add(new ExitScene(this));
-		scenes.add(new PauseMenu(this));
+		scenes.add(new PauseMenuScene(this));
 		scenes.add(new NameInputScene(this));
 	}
 	

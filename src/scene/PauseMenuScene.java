@@ -1,10 +1,10 @@
 package scene;
 
-public class PauseMenu extends MenuScene implements Scene {
+public class PauseMenuScene extends MenuScene implements Scene {
 	private static final int BACK_BATTLE = 0;
 	private static final int EXIT_BATTLE = 1;
 
-	public PauseMenu(SceneManager manager) {
+	public PauseMenuScene(SceneManager manager) {
 		super(manager, "ポーズメニュー");
 		add("戦闘に戻る", "ゲームを終了する");
 	}
