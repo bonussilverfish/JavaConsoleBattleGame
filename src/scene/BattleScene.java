@@ -16,18 +16,9 @@ public class BattleScene extends MenuScene implements Scene {
 
 	@Override
 	public void input(Scanner sc) {
-		if (!isWin() && !isGameOver()) {
+		if (!isWin() && !isGameOver() && !isGameClear()) {
 			super.input(sc);
 		}
-	}
-
-	@Override
-	public void update() {
-		if (isWin() && !isGameClear()) {
-			System.out.println(currentEnemy.getName() + "を、倒した！！");
-			System.out.println("次の敵が現れた！！");
-		}
-		super.update();
 	}
 
 	@Override
@@ -44,8 +35,7 @@ public class BattleScene extends MenuScene implements Scene {
 		} else if (isGameOver()) {
 			return manager.getScene(SceneManager.GAME_OVER_SCENE);
 		} else if (isWin()) {
-			currentEnemy = manager.getNextEnemy();
-			return this;
+			return manager.getScene(SceneManager.NEXT_ENEMY_ECENE);
 		} else {
 			switch (index) {
 			case BATTLE:

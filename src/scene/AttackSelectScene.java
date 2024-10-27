@@ -23,9 +23,9 @@ public class AttackSelectScene extends MenuScene implements Scene {
 	}
 
 	private void registerSkills() {
-		skills[HIT] = new Skill("殴る", Integer.MAX_VALUE, () -> 5);
-		skills[DOUBLE_KICK] = new Skill("連続蹴り", 10, () -> 8);
-		skills[SUPER_ATTACK] = new Skill("最終奥義", 1, () -> 12);
+		skills[HIT] = new Skill("殴る", Integer.MAX_VALUE, () -> 20);
+		skills[DOUBLE_KICK] = new Skill("連続蹴り", 10, () -> 35);
+		skills[SUPER_ATTACK] = new Skill("最終奥義", 1, () -> 50);
 	}
 
 	@Override
@@ -43,6 +43,9 @@ public class AttackSelectScene extends MenuScene implements Scene {
 				System.out.println(currentEnemy.getName() + "に【" + invokeValue + "】のダメージ！！");
 				currentEnemy.effect(invokeValue);
 				break;
+			}
+			if (currentEnemy.isDie()) {
+				index = BACK;
 			}
 		} else {
 			index = UNKNOWN_COMMAND;

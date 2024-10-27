@@ -18,6 +18,7 @@ public class SceneManager {
 	public static final int EXIT_SCENE = 7;
 	public static final int PAUSE_MENU_SCENE = 8;
 	public static final int NAME_INPUT_SCENE = 9;
+	public static final int NEXT_ENEMY_ECENE = 10;
 	
 	public final int MAX_ENEMEY_LEVEL;
 	
@@ -36,7 +37,7 @@ public class SceneManager {
 		addEnemies();
 		addScenes();
 		this.MAX_ENEMEY_LEVEL = enemyList.size() - 1;
-		this.enemyLevel = -1;
+		this.enemyLevel = 0;
 		this.currentScene = scenes.get(START_MENU_SCENE);
 	}
 	
@@ -79,6 +80,7 @@ public class SceneManager {
 		scenes.add(new ExitScene(this));
 		scenes.add(new PauseMenuScene(this));
 		scenes.add(new NameInputScene(this));
+		scenes.add(new NextEnemyScene(this));
 	}
 	
 	public Scene getScene(int index) {
